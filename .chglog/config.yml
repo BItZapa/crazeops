@@ -1,0 +1,57 @@
+style: github
+template: CHANGELOG.tpl.md
+info:
+  title: CHANGELOG
+  repository_url: https://github.com/maddevsio/aws-eks-base
+options:
+  commits:
+    sort_by: Type
+    filters:
+      Type:
+        - feat
+        - fix
+        - improvement
+        - enh
+        - doc
+        - refactor
+        - test
+        - ci
+
+  commit_groups:
+    group_by: Type
+    sort_by: Custom
+    title_order:
+      - feat
+      - improvement
+      - enh
+      - refactor
+      - fix
+      - doc
+      - test
+      - ci
+    title_maps:
+      feat: FEATURES
+      fix: BUG FIXES
+      improvement: ENHANCEMENTS
+      enh: ENHANCEMENTS
+      doc: DOCS
+      refactor: REFACTORS
+      test: TESTS
+      ci: CI
+
+  header:
+    pattern: "^(.+)\\s*:\\s*(.+)$"
+    pattern_maps:
+      - Type
+      - Subject
+
+  notes:
+    keywords:
+      - BREAKING CHANGES
+      - NOTES
+
+  refs:
+    actions:
+      - Closes
+      - Fixes
+      - Resolves
